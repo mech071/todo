@@ -7,7 +7,7 @@ import { IoMoonOutline } from "react-icons/io5";
 const Navbar = ({ toggleTheme, theme, toggleSidebar }) => {
   return (
     <>
-      <div className="bg-zinc-100 dark:bg-zinc-800 h-18 flex justify-between items-center text-4xl px-2.5 py-5">
+      <div className="bg-zinc-100 dark:bg-zinc-800 h-18 flex justify-between items-center text-4xl px-2.5 py-5 ">
 
         <div onClick={toggleSidebar} 
         className="p-2.5 text-black dark:text-white cursor-pointer transition-transform duration-200 ease-out hover:scale-110">
@@ -32,4 +32,3 @@ const Navbar = ({ toggleTheme, theme, toggleSidebar }) => {
 }
 
 export default Navbar
-

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
-import Dashboard from './components/dashboard';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -49,7 +49,9 @@ function App() {
   const toggleTheme = () => {
     setTheme(prev => (prev === "light" ? "dark" : "light"));
   };
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    return window.innerWidth >= 768;
+  });
   const [currentSection, setCurrentSection] = useState("All Tasks");
   const filteredTodos = todos.filter((todo) => {
     const today = new Date();
