@@ -104,9 +104,14 @@ function App() {
       <div className={theme === "dark" ? "dark" : ""}>
         <div className="min-h-screen text-stone-600 font-bold font-['Alata'] dark:text-white">
           <Navbar toggleTheme={toggleTheme} theme={theme} toggleSidebar={() => setSidebarOpen(prev => !prev)} />
-          <div className="flex flex-1">
+          <div className="flex md:flex-1">
             {sidebarOpen && (
-              <div className="w-1/5 border-r bg-zinc-100 dark:bg-slate-800 border-zinc-200 dark:border-zinc-800">
+              <div className={`fixed md:static top-[72px] left-0 h-full w-64 md:w-1/5 bg-zinc-100 dark:bg-slate-800
+    border-r border-zinc-200 dark:border-zinc-800
+    transform transition-transform duration-300
+    ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+    md:translate-x-0
+    z-50`}>
                 <Sidebar setCurrentSection={setCurrentSection} currentSection={currentSection} newTodo={newTodo}
                   setNewTodo={setNewTodo} addTodo={addTodo} selectedDate={selectedDate}
                   setSelectedDate={setSelectedDate} />
